@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Moments Studio | Photography</title>
+  <meta name="description" content="Beautiful pre-wedding, birthday and special occasion photography. Explore our portfolio and book your shoot.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #252525;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.2;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #bb766d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #777;
+      font-size: 15px;
+    }
+
+    /* HEADER */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      color: white;
+    }
+
+    nav {
+      min-height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: #ffb9ae;
+    }
+
+    .button {
+      display: inline-block;
+      background: #f6b1a5;
+      color: #241c1a;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg,
+          rgba(15, 15, 15, 0.70) 0%,
+          rgba(15, 15, 15, 0.35) 48%,
+          rgba(15, 15, 15, 0.08) 100%),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85")
+        center 48% / cover no-repeat;
+    }
+
+    .hero-content {
+      padding-top: 75px;
+      max-width: 560px;
+    }
+
+    .hero .eyebrow {
+      color: #ffc2b7;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      margin-bottom: 28px;
+      color: #f4eeee;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .outline-button {
+      display: inline-block;
+      padding: 11px 22px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 50px;
+      font-size: 13px;
+      transition: 0.25s;
+    }
+
+    .outline-button:hover {
+      background: white;
+      color: #222;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      padding: 85px 0;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      border-radius: 10px;
+      background: #fbf0ee;
+    }
+
+    .portfolio-card:nth-child(2) {
+      background: #edf3f5;
+    }
+
+    .portfolio-card img {
+      height: 330px;
+      transition: transform 0.5s;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-image {
+      overflow: hidden;
+    }
+
+    .portfolio-info {
+      padding: 22px 24px 25px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .portfolio-info p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 14px;
+    }
+
+    .text-link {
+      color: #ad655b;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* SERVICES */
+
+    .services {
+      padding: 80px 0;
+      background: #f6f7f6;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      padding: 32px 24px;
+      text-align: center;
+      background: white;
+      border: 1px solid #ececec;
+      border-radius: 10px;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 85px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-image img {
+      height: 420px;
+      border-radius: 10px;
+    }
+
+    .about-content h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: #737373;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 80px 0;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(20, 22, 24, .85),
+                        rgba(20, 22, 24, .88)),
+        url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80")
+        center / cover no-repeat;
+    }
+
+    .contact .eyebrow {
+      color: #f6b1a5;
+    }
+
+    .contact h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #ddd;
+      margin-bottom: 28px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .contact-buttons a {
+      border: 1px solid #999;
+      border-radius: 7px;
+      padding: 12px 22px;
+      font-size: 13px;
+    }
+
+    .contact-buttons a:hover {
+      background: white;
+      color: #222;
+    }
+
+    .contact-buttons .whatsapp {
+      background: #25d366;
+      color: white;
+      border-color: #25d366;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #151719;
+      color: #ccc;
+      padding: 25px 0;
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      color: white;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      nav {
+        min-height: 75px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links .button {
+        padding: 9px 14px;
+      }
+
+      .hero {
+        min-height: 570px;
+        background-position: 57% center;
+      }
+
+      .portfolio-card img {
+        height: 260px;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .about-image img {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 12px;
+        padding: 15px 0;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 16px;
+        flex-wrap: wrap;
+        font-size: 12px;
+      }
+
+      .nav-links .button {
+        padding: 7px 12px;
+      }
+
+      .hero {
+        min-height: 610px;
+        background-position: 59% center;
+      }
+
+      .hero-content {
+        padding-top: 105px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .portfolio,
+      .services,
+      .about,
+      .contact {
+        padding: 60px 0;
+      }
+
+      .portfolio-grid,
+      .services-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        gap: 22px;
+      }
+
+      .portfolio-card img {
+        height: 260px;
+      }
+
+      .service-card {
+        padding: 28px 20px;
+      }
+
+      .about-grid {
+        gap: 28px;
+      }
+
+      .about-image img {
+        height: 300px;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+      }
+
+      .contact-buttons a {
+        width: 100%;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          Moments Studio
+          <span>PHOTOGRAPHY</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="button">Book Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Capturing Your</span>
+          <h1>Special Moments, Forever.</h1>
+          <p>
+            Pre-wedding shoots, birthday photography
+            and beautiful memories that last a lifetime.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="button">View Our Work →</a>
+            <a href="#contact" class="outline-button">Let's Talk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our Portfolio</span>
+          <h2>Beautiful Stories, Beautiful People</h2>
+          <p>A glimpse into the moments we love capturing.</p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="portfolio-card">
+            <div class="portfolio-image">
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+                alt="Romantic couple photography"
+                loading="lazy">
+            </div>
+
+            <div class="portfolio-info">
+              <h3>Pre-Wedding Shoots</h3>
+              <p>
+                Romantic moments, beautiful locations
+                and timeless memories.
+              </p>
+              <a href="#contact" class="text-link">
+                Enquire About a Shoot →
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image">
+              <img
+                src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=85"
+                alt="Birthday celebration photography"
+                loading="lazy">
+            </div>
+
+            <div class="portfolio-info">
+              <h3>Birthday Shoots</h3>
+              <p>
+                Joyful celebrations, candid moments
+                and memories to cherish.
+              </p>
+              <a href="#contact" class="text-link">
+                Enquire About a Shoot →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our Services</span>
+          <h2>What We Offer</h2>
+          <p>Photography for life's most special occasions.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon">📷</div>
+            <h3>Pre-Wedding</h3>
+            <p>
+              Creative couple portraits and romantic
+              outdoor photoshoots.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎂</div>
+            <h3>Birthday Photography</h3>
+            <p>
+              Birthday portraits, cake-smash sessions
+              and celebration highlights.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Custom Shoots</h3>
+            <p>
+              Personalized photography sessions
+              designed around your ideas.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1000&q=85"
+              alt="Professional camera used for photography"
+              loading="lazy">
+          </div>
+
+          <div class="about-content">
+            <span class="eyebrow">Behind The Lens</span>
+            <h2>Every Picture Tells a Story.</h2>
+
+            <p>
+              We believe the best photographs do more than
+              capture a moment. They bring back the feelings,
+              smiles and emotions of that special day.
+            </p>
+
+            <p>
+              From romantic pre-wedding sessions to joyful
+              birthday celebrations, we work to make every
+              shoot personal and memorable.
+            </p>
+
+            <a href="#contact" class="button">
+              Plan Your Shoot →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <span class="eyebrow">Get In Touch</span>
+
+        <h2>Let's Create Beautiful Memories Together.</h2>
+
+        <p>
+          Have a shoot in mind? Contact us to discuss
+          your ideas, dates and photography packages.
+        </p>
+
+        <div class="contact-buttons">
+          <!-- Replace 919876543210 with the studio's WhatsApp number -->
+          <a
+            class="whatsapp"
+            href="https://wa.me/919876543210?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20a%20photoshoot."
+            target="_blank"
+            rel="noopener">
+            WhatsApp Enquiry
+          </a>
+
+          <!-- Replace with the studio's real telephone number -->
+          <a href="tel:+919876543210">
+            Call: +91 98765 43210
+          </a>
+
+          <!-- Replace with the studio's actual location -->
+          <a
+            href="https://www.google.com/maps"
+            target="_blank"
+            rel="noopener">
+            Studio Location
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">Moments Studio</div>
+
+      <p>
+        © 2026 Moments Studio. All rights reserved.
+      </p>
+
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
